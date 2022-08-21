@@ -1,0 +1,13 @@
+version: "3.8"
+# TODO: change skate commands to environment variables
+
+services:
+  database:
+    container_name: ${name}
+    image: mysql/mysql-server:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: ${pass}
+    ports:
+      - "3306:3306"
+    volumes:
+      - "/home/bashbunni/docker/${name}/conf.d/my.cnf:/etc/my.cnf"
